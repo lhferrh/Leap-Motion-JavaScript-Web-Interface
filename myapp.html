@@ -1,0 +1,135 @@
+<!--
+The MIT License (MIT)
+Copyright (c) 2014 Leap Motion Inc
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+//-->
+
+<html>
+<head>
+    <title>LeapMotion NPI app</title>
+    <meta charset="utf-8" lang="eng" http-equiv="Content-Type" content="text/html; charset=window-1252">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="resources/css/Main.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/109794/leap.skeleton.0.6.0-beta1.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="row border" >
+		<div id="title" class="col-md-10  button button_style border title">
+			<h1 class="text-center">PINTOR BARTOLOME ESTEBAN MURILLO</h1>
+		</div>
+    <div  id="zoomActivator" class = "col-md-2 button selectable button_style">
+      <h2 id="zoomActivatorText" class="text-center selectable">Activate ZOOM</h2>
+    </div>
+  </div>
+
+	
+	<div class="row">
+		<div id="life" class="col-md-6 button button_style border selectable">
+			<h2 id="textLife" class="text-center button selectable">Vida e historia</h2>
+		</div>
+		<div id="paintings" class="col-md-6 button button_style border selectable">
+			<h2 id="textPaintings" class="text-center button selectable">Obras</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 border displayer ">
+    <img src="./images/foto3.jpg" class="img-responsive img-center img-border-efect limit-height-550px" >
+
+  	
+	 </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 border language-menu">
+      <div class="row">
+        <div class="col-md-1 ">
+          <img id="1" src="./images/spain.png" class="selectable img-responsive">
+        </div>
+        <div class="col-md-1 ">
+          <img src="./images/unitedKingdom.png" class="selectable img-responsive">
+        </div>
+        <div class="col-md-1 ">
+          <img src="./images/france.png" class="selectable img-responsive">
+        </div>
+        <div class="col-md-1 col-md-offset-6">
+          <img src="./images/china.png" class="selectable img-responsive">
+        </div>
+        <div class="col-md-1 ">
+          <img src="./images/germany.png " class="selectable img-responsive">
+        </div>
+        <div class="col-md-1 ">
+          <img src="./images/italy.png" class="selectable img-responsive">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+	<script language="javascript" src="resources/javascript/codepen_pinch.js">
+	</script>
+	<script language="javascript" src="resources/javascript/Vector.js">
+	</script>
+	<script language="javascript" src="resources/javascript/InputEngine2.js">
+	</script>
+	<script language="javascript" src="resources/javascript/UiEngine2.js">
+	</script>
+  <script language="javascript">
+
+    $(document).ready(function () {
+      $("#zoomActivator").css({"height" :$("#title").css("height")}) ;
+      
+    });
+    
+    $( window ).resize(function() {
+      $("#zoomActivator").css({"height" :$("#title").css("height")}) ;
+      console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ reizing" );
+      $("p").css("font-size",Number($("p").css("font-size").substring(0,$("p").css("font-size").indexOf("px")))/document.body.style.zoom+"px");
+      console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ reizing2  " + Number($("p").css("font-size").substring(0,$("p").css("font-size").indexOf("px")))/document.body.style.zoom+"px" );
+    });
+
+    
+    $(document).on("click",function(event){
+      console.log("CLICK;: pageX: " + event.pageX + ", pageY: " + event.pageY); 
+      console.log("SELECTION: pageX: " + window.POSITION_SELECTION.x + ", pageY: " + window.POSITION_SELECTION.y); 
+      console.log("CURSOR: pageX: " + window.CURSOR_POSITION.x + ", pageY: " + window.CURSOR_POSITION.y); 
+      console.log("pageX: " + window.GLOBAL_POSITION.x + ", pageY: " + window.GLOBAL_POSITION.y);
+    }
+      
+    );
+
+    
+   
+  </script>
+
+
+</body>
+</html>
