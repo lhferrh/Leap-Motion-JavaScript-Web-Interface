@@ -1,0 +1,17 @@
+
+
+.movement-button{
+	border:white 5px;
+	height:183.333px;
+	width:33.3333%;
+	float: left;
+}
+
+
+.movement-menu{
+	position:absolute;
+	top:0px;
+	width:100%;
+	margin:auto ;
+
+}

@@ -1,0 +1,22 @@
+.selectable-square{
+	background-color:black;
+}
+
+.movement-button{
+	background-color:#f2f2f25c;
+	border:white 1px;
+	height:183.333px;
+	width:33.3333%;
+	float: left;
+}
+
+.movement-button:hover{
+	background-color:#fda0a05c;
+}
+.movement-menu{
+	position:absolute;
+	top:0px;
+	width:100%;
+	margin:auto ;
+
+}

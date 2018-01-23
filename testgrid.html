@@ -42,11 +42,11 @@ THE SOFTWARE.
 </head>
 <body>
 	<div class="row border" >
-		<div id="title" class="col-md-8  button button_style border title">
+		<div id="title" class="col-md-10  button button_style border title">
 			<h1 class="text-center">PINTOR BARTOLOME ESTEBAN MURILLO</h1>
 		</div>
-    <div  id="zoomActivator" class = "col-md-4 button selectable button_style border">
-      <h2 id="zoomActivatorText" class="text-center selectable">Ampliar cuadro</h2>
+    <div  id="zoomActivator" class = "col-md-2 button selectable button_style">
+      <h2 id="zoomActivatorText" class="text-center selectable">Activate ZOOM</h2>
     </div>
   </div>
 
@@ -62,8 +62,18 @@ THE SOFTWARE.
 
 	<div class="row">
 		<div class="col-md-12 border displayer ">
-    <img src="./images/foto3.jpg" class="img-responsive img-center img-border-efect limit-height-550px" >
-
+    <img src="./images/foto3.jpg" class="img-responsive img-center img-border-efect limit-height-550px active" >
+    <div class="movement-menu">
+      <div class=" selectable-square movement-button" ></div>
+      <div class=" selectable-square movement-button" ></div>
+      <div class=" selectable-square movement-button" ></div>
+      <div class=" selectable-square movement-button" ></div>
+      <div class=" selectable-square movement-button" ></div>
+      <div class=" selectable-square movement-button" ></div>
+      <div class=" selectable-square movement-button" ></div>
+      <div class=" selectable-square movement-button" ></div>
+      <div class=" selectable-square movement-button" ></div>
+    </div>
   	
 	 </div>
   </div>
@@ -94,47 +104,18 @@ THE SOFTWARE.
     </div>
   </div>
 
-
-	<script language="javascript" src="resources/javascript/codepen_pinch.js">
-	</script>
-	<script language="javascript" src="resources/javascript/Vector.js">
-	</script>
-	<script language="javascript" src="resources/javascript/InputEngine2.js">
-	</script>
-	<script language="javascript" src="resources/javascript/UiEngine2.js">
-	</script>
-  <script language="javascript">
-
-    $(document).ready(function () {
-      $("#zoomActivator").css({"height" :$("#title").css("height")}) ;
-      
-        
-    });
-    
-    $( window ).resize(function() {
-      $("#zoomActivator").css({"height" :$("#title").css("height")}) ;
-      console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ reizing" );
-      $("p").css("font-size",Number($("p").css("font-size").substring(0,$("p").css("font-size").indexOf("px")))/document.body.style.zoom+"px");
-      console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ reizing2  " + Number($("p").css("font-size").substring(0,$("p").css("font-size").indexOf("px")))/document.body.style.zoom+"px" );
-    });
-
-    
-    $(document).on("click",function(event){
-        console.log("CLICK;: pageX: " + event.pageX + ", pageY: " + event.pageY); 
-        console.log("SELECTION: pageX: " + window.POSITION_SELECTION.x + ", pageY: " + window.POSITION_SELECTION.y); 
-        console.log("CURSOR: pageX: " + window.CURSOR_POSITION.x + ", pageY: " + window.CURSOR_POSITION.y); 
-        console.log("pageX: " + window.GLOBAL_POSITION.x + ", pageY: " + window.GLOBAL_POSITION.y);
-      }    
-    );
+<script>
 
 
+var wp =$(".active").parent().width();
+var w =$(".active").width();
+var n = (wp-w)/2+15;
+$(".movement-menu").css("left", n+"px");
 
+$(".movement-menu").css("width", w+"px");
 
+</script>
 
-
-    
-   
-  </script>
 
 
 </body>
